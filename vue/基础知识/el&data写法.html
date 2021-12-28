@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello vue</title>
+    <!-- 开发版本 -->
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <h1>hello,{{name}}</h1>
+        <h1>hello,{{$options}}</h1>
+        <h1>hello,{{$emit}}</h1>
+    </div>
+    <script type="text/javascript"> 
+    Vue.config.productionTip=false
+    //容器和vue实例是一对一的关系
+//    const v = new Vue({
+//        data:{//用于存储数据，数据提供el指定的容器使用
+//            name:'zyh',
+//            url:"http://www.baidu.com"
+//        }
+//    })
+//    console.log(v);
+//    v.$mount('#root')
+
+    //data的第二种写法，函数式
+    new Vue({
+        el:'#root',
+        data:function(){
+            //vue管理的函数如果写成()>，this就不是vue实例，而是窗口
+            console.log('>>>',this);
+            return{
+                name:'zyh'
+            }
+        }
+    })
+ 
+</script>
+</body>
+</html>

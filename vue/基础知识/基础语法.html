@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello vue</title>
+    <!-- 开发版本 -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- <div class="root">
+        <h1>hello,{{name.toUpperCase()}}</h1>
+    </div> -->
+    <div class="root">
+        <!-- <h1>hello,{{name}}</h1> -->
+
+        <!-- 指令语法 -->
+        <!-- <a v-bind:href="url">ttt</a> -->
+        单向数据绑定: <input type="text" v-bind:value="name"> 
+        <!-- 双向绑定一般用在表单类元素，既可以从data流到页面，也可以从页面流到data v-model默认找value-->
+        双向数据绑定: <input type="text" v-model:value="name"> 
+
+    </div>
+    <script type="text/javascript"> 
+    Vue.config.productionTip=false
+    //容器和vue实例是一对一的关系
+   const x = new Vue({
+    //    el:document.getElementById('$root')
+    //    el:'#root',//id选择器el指定vue为那个容器服务
+       el:'.root',//类选择器el指定vue为那个容器服务
+       data:{//用于存储数据，数据提供el指定的容器使用
+           name:'zyh',
+           url:"http://www.baidu.com"
+       }
+    //    el:'.root'//el指定vue为那个容器服务
+
+   })
+</script>
+</body>
+</html>
