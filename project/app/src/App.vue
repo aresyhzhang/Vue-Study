@@ -1,6 +1,8 @@
 <template>
 <div>
      <Header></Header>
+     <!-- 路由组件出口的地方 -->
+     <router-view></router-view>
     <Footer></Footer>
 </div>
  
@@ -8,6 +10,7 @@
 
 <script>
 import Header from './components/header'
+
 import Footer from './components/footer'
 
 export default {
