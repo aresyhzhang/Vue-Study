@@ -1,4 +1,5 @@
 import axios from "axios"
+import nprogress from "nprogress";
 
 //request就是axios,只是稍微配置下
 const requests=axios.create({
@@ -21,3 +22,5 @@ requests.interceptors.response.use((res)=>{
     //响应失败回调
     return Promise.reject(new Error("fail"))
 })
+
+export default axios;
